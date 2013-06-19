@@ -7,9 +7,12 @@ angular.module('ngResourceHackApp', ['mongolabResourceHttp'])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         resolve: {
-          project: function(Project) {
+          projects: function(Project) {
             return Project.all();
-          }
+          },
+          project: function (Project) {
+            return new Project();
+          } 
         }
       })
       .otherwise({
