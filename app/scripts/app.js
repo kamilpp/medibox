@@ -5,10 +5,18 @@ angular.module('ngResourceHackApp', ['mongolabResourceHttp'])
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        resolve: {
+          project: function(Project) {
+            return Project.all();
+          }
+        }
       })
       .otherwise({
         redirectTo: '/'
       });
   })
-  .constant('MONGOLAB_CONFIG',{API_KEY:'cejoG5JioOL4V411LBCZVtP21ND7wNDz', DB_NAME:'names'});
+  .constant('MONGOLAB_CONFIG',{API_KEY:'cejoG5JioOL4V411LBCZVtP21ND7wNDz', DB_NAME:'names'})
+  .factory('Project', function ($mongolabResourceHttp) {
+    return $mongolabResourceHttp('projects');
+  });
