@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ngResourceHackApp')
-  .controller('MainCtrl', function ($scope, projects, project) {
+  .controller('MainCtrl', function ($scope, projects, project, Project) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -13,6 +13,8 @@ angular.module('ngResourceHackApp')
     $scope.project = project;
 
     $scope.save = function () {
-    	$scope.project.$saveOrUpdate();
+      $scope.project.$saveOrUpdate().then(function () {
+        $scope.projects = Project.all();
+      });
     }
   });
