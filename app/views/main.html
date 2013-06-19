@@ -8,6 +8,16 @@
   <h3>Enjoy coding! - Yeoman</h3>
 </div>
 
+<form name="form">
+  <label>Name</label>
+  <input type="text" ng-model="project.name">
+  <br>
+  <label>Description</label>
+  <input type="text" ng-model="project.description">
+  <hr>
+  <button ng-click="save()">Save</button>
+</form>
+
 <h1>Projects:</h1>
 <ul>
 	<li ng-repeat="p in projects">{{p}}</li>

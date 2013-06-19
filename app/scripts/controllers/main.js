@@ -7,15 +7,12 @@ angular.module('ngResourceHackApp')
       'AngularJS',
       'Karma'
     ];
-    // $scope.project = project;
-    // $scope.project = {
-    // 	name: "First project"
-    // };
+
     $scope.projects = projects;
 
     $scope.project = project;
-    
-    $scope.project['name'] = "David's supercool project";
 
-    $scope.project.$saveOrUpdate();
+    $scope.save = function () {
+    	$scope.project.$saveOrUpdate();
+    }
   });
