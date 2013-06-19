@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ngResourceHackApp', [])
+angular.module('ngResourceHackApp', ['mongolabResourceHttp'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
