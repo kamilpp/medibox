@@ -10,4 +10,5 @@ angular.module('ngResourceHackApp', ['mongolabResourceHttp'])
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('MONGOLAB_CONFIG',{API_KEY:'cejoG5JioOL4V411LBCZVtP21ND7wNDz', DB_NAME:'names'});

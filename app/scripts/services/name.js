@@ -1,16 +1,10 @@
 'use strict';
 
 angular.module('ngResourceHackApp')
-  .factory('name', function () {
+  .factory('name', function ($mongolabResourceHttp) {
     // Service logic
-    // ...
-
-    var meaningOfLife = 42;
 
     // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
     };
   });
