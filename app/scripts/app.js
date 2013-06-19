@@ -10,8 +10,8 @@ angular.module('ngResourceHackApp', ['mongolabResourceHttp'])
           projects: function(Project) {
             return Project.all();
           },
-          project: function (Project) {
-            return new Project();
+          Project: function (Project) {
+            return Project;
           } 
         }
       })
